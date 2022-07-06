@@ -10,10 +10,10 @@ RUN dotnet restore "JavaPackagePublishing/JavaPackagePublishing.csproj"
 
 WORKDIR "/src/JavaPackagePublishing"
 COPY . .
-RUN dotnet build "JavaPackagePublishing.csproj" -a x64 --sc true -c Release -o /app/build
+RUN dotnet build "JavaPackagePublishing.csproj" --sc true -c Release -r linux-x64 -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "JavaPackagePublishing.csproj" -a x64 --sc true -c Release -p:PublishTrimmed=true -o /app/publish
+RUN dotnet publish "JavaPackagePublishing.csproj" --sc true -c Release -r linux-x64 -o /app/publish
 
 FROM base AS final
 WORKDIR /app
