@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25F65275-A091-489C-B18F-564EB3252011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaPackagePublishing", "src\JavaPackagePublishing\JavaPackagePublishing.csproj", "{4F43F7C2-A9B3-47B7-8A7C-2E84823C4872}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F43F7C2-A9B3-47B7-8A7C-2E84823C4872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F43F7C2-A9B3-47B7-8A7C-2E84823C4872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F43F7C2-A9B3-47B7-8A7C-2E84823C4872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F43F7C2-A9B3-47B7-8A7C-2E84823C4872}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F43F7C2-A9B3-47B7-8A7C-2E84823C4872} = {25F65275-A091-489C-B18F-564EB3252011}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E49E67A7-3BFC-4D1D-9642-5E8CED5E3E3F}
+	EndGlobalSection
+EndGlobal
