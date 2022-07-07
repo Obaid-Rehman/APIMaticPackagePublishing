@@ -56,7 +56,7 @@ namespace JavaPackagePublishing.Controllers
                 ProcessStartInfo startInfo = new ProcessStartInfo()
                 {
                     UseShellExecute = false,
-                    FileName = Path.Combine(mvnInstallationDirectory, mvnExecutable),
+                    FileName = Path.Combine(mvnInstallationDirectory, "bin", mvnExecutable),
                     RedirectStandardError = true,
                     RedirectStandardOutput = true,
                     Arguments = $"-X package -Dmaven.test.skip=true -f {Path.Combine(targetDir, "pom.xml")}"
