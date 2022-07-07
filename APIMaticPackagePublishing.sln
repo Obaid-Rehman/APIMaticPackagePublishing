@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25F65275-A09
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaPackagePublishing", "src\JavaPackagePublishing\JavaPackagePublishing.csproj", "{4F43F7C2-A9B3-47B7-8A7C-2E84823C4872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubyPackagePublishing", "src\RubyPackagePublishing\RubyPackagePublishing.csproj", "{0CFBFB60-1851-47BF-B497-F425CDBD577C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubyPackagePublishing", "src\RubyPackagePublishing\RubyPackagePublishing.csproj", "{0CFBFB60-1851-47BF-B497-F425CDBD577C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PythonPackagePublishing", "src\PythonPackagePublishing\PythonPackagePublishing.csproj", "{DFF1F5C6-DFB4-4410-B9E7-31DBCE5CC160}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{0CFBFB60-1851-47BF-B497-F425CDBD577C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CFBFB60-1851-47BF-B497-F425CDBD577C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CFBFB60-1851-47BF-B497-F425CDBD577C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF1F5C6-DFB4-4410-B9E7-31DBCE5CC160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF1F5C6-DFB4-4410-B9E7-31DBCE5CC160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF1F5C6-DFB4-4410-B9E7-31DBCE5CC160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF1F5C6-DFB4-4410-B9E7-31DBCE5CC160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4F43F7C2-A9B3-47B7-8A7C-2E84823C4872} = {25F65275-A091-489C-B18F-564EB3252011}
 		{0CFBFB60-1851-47BF-B497-F425CDBD577C} = {25F65275-A091-489C-B18F-564EB3252011}
+		{DFF1F5C6-DFB4-4410-B9E7-31DBCE5CC160} = {25F65275-A091-489C-B18F-564EB3252011}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E49E67A7-3BFC-4D1D-9642-5E8CED5E3E3F}

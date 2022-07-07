@@ -1,22 +1,22 @@
 
-FROM ruby:2.7.6-alpine3.16 AS base
+FROM python:3.9.13-alpine3.16 AS base
 WORKDIR /app
 EXPOSE 80
 
-# Directory where gem executable is located
-ENV GEM_INSTALLATION_DIR=/usr/local/bin
+# Directory where pip executable is located
+ENV PIP_INSTALLATION_DIR=/usr/local/bin
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["RubyPackagePublishing.csproj", "RubyPackagePublishing/"]
-RUN dotnet restore "RubyPackagePublishing/RubyPackagePublishing.csproj"
+COPY ["PythonPackagePublishing.csproj", "PythonPackagePublishing/"]
+RUN dotnet restore "PythonPackagePublishing/PythonPackagePublishing.csproj"
 
-WORKDIR "/src/RubyPackagePublishing"
+WORKDIR "/src/PythonPackagePublishing"
 COPY . .
-RUN dotnet build "RubyPackagePublishing.csproj" -c Release -o /app/build
+RUN dotnet build "PythonPackagePublishing.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "RubyPackagePublishing.csproj" -c Release -o /app/publish
+RUN dotnet publish "PythonPackagePublishing.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
@@ -62,4 +62,4 @@ RUN wget -O dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Runtime/$DOTNET
     && rm aspnetcore.tar.gz
 
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet","RubyPackagePublishing.dll"]
+ENTRYPOINT ["dotnet","PythonPackagePublishing.dll"]
