@@ -1,8 +1,8 @@
-namespace JavaPackagePublishing
+namespace RubyPackagePublishing
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +16,10 @@ namespace JavaPackagePublishing
 
             app.UseAuthorization();
 
+
             app.MapControllers();
 
             app.Run();
         }
     }
 }
-
-
