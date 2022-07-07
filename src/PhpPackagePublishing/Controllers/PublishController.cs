@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO.Compression;
 
-namespace PythonPackagePublishing.Controllers
+namespace PhpPackagePublishing.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -43,27 +43,24 @@ namespace PythonPackagePublishing.Controllers
 
             var zipFilePath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
 
-            var stdStandardOutput = "PIP_INSTALL Info:\n";
-            var stdErrorOutput = "PIP_INSTALL Errors:\n";
+            var stdStandardOutput = "COMPOSER_INSTALL Info:\n";
+            var stdErrorOutput = "COMPOSER_INSTALL Errors:\n";
             var stdErrorOutputInitialLength = stdErrorOutput.Length;
 
             try
             {
                 ZipFile.ExtractToDirectory(sourceFilePath, targetDir);
 
-                string pipInstallationDirectory = _configuration["PIP_INSTALLATION_DIR"];
-                string pipExecutable = OperatingSystem.IsLinux() ? "pip" : "pip.exe";
-
-                var installationDir = Path.Combine(targetDir, "pipInstallations");
-                Directory.CreateDirectory(installationDir);
+                string composerInstallationDirectory = _configuration["COMPOSER_INSTALLATION_DIRECTORY"];
+                string composerExecutable = OperatingSystem.IsLinux() ? "composer" : "composer.exe";
 
                 ProcessStartInfo startInfo = new ProcessStartInfo()
                 {
                     UseShellExecute = false,
-                    FileName = Path.Combine(pipInstallationDirectory, pipExecutable),
+                    FileName = Path.Combine(composerInstallationDirectory, composerExecutable),
                     RedirectStandardError = true,
                     RedirectStandardOutput = true,
-                    Arguments = $"install -r requirements.txt -t {installationDir}",
+                    Arguments = $"install",
                     WorkingDirectory = targetDir,
                 };
 

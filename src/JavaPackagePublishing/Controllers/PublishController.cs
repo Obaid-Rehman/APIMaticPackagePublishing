@@ -89,7 +89,7 @@ namespace JavaPackagePublishing.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError($"Something went wrong. Exeception:\n{e.StackTrace}");
+                _logger.LogError($"Something went wrong. Exeception:\n{e.Message}\n{e.StackTrace}");
                 return BadRequest(e.StackTrace);
             }
             finally
