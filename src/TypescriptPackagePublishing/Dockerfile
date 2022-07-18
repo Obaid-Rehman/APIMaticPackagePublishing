@@ -3,7 +3,7 @@ FROM node:18.6.0-alpine3.16 AS base
 WORKDIR /app
 EXPOSE 80
 
-# Directory where pip executable is located
+# Directory where npm executable is located
 ENV NPM_INSTALLATION_DIR=/usr/local/bin
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
